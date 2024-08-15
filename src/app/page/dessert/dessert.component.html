@@ -1,0 +1,47 @@
+<!-- Tab Menu Start -->
+<nav class="container tabs">
+  <ul>
+    <li *ngFor="let type of types; let i = index">
+      <a [routerLink]="['/' + name[i]]" [ngClass]="{'active': i === 2}">
+         {{type.name}}
+      </a>
+    </li>
+  </ul>
+</nav>
+<!-- Tab Menu End -->
+
+<!-- Main Menu Start -->
+<div class="container" id="mainmenu">
+  <div class="container menu">
+    <!-- menu1 -->
+    <ng-container *ngFor="let food of foods; let i = index">
+    <div class="row">
+      <div class="col-md-5">
+        <img src="{{food.picture}}" alt="" class="img-fluid " style="margin-left: 20px; margin-top: 20px;" width="300px">
+      </div>
+      <div class="col-md-7">
+        <div class="row">
+          <div class="col-md-8 menu-name">
+            <p class="text-topic-menu">
+              <br>
+              <br>
+              {{food.name}}
+            </p>
+          </div>
+          <div class="col-md menu-price">
+            <p class="price-tag-menu">{{food.price}}</p>
+            <div style="display: flex; align-items: center; margin-left: 70px;">
+              <mat-icon style="font-size: 26px; margin-right: 10px; cursor: pointer;" (click)="inc(i)">add_circle</mat-icon>
+              <span style="font-size: 20px; font-weight: bolder;">{{quantities[i]}}</span>
+              <mat-icon style="font-size: 26px; margin-left: 9px; cursor: pointer;" (click)="dec(i)">remove_circle</mat-icon>
+            </div>
+            <button class="add-to-cart" (click)="addToCart(food,i)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <hr class="hr-dot">
+    </div>
+  </ng-container>
+  </div>
+<div class="container line-buttom"></div>
+<!-- Main Menu End -->

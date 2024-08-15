@@ -1,0 +1,145 @@
+.body{
+  height: 753px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-image: url('https://krua.co/wp-content/uploads/2021/02/ImageBannerMobile_960x633-21.jpg'); */
+  background: linear-gradient(120deg, #7b4303, #392500);
+}
+.test{
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+  height: 400px;
+  background-color: rgba(33, 28, 28, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(253, 253, 252, 0.37);
+  border-radius: 5px;
+  border-left: 1px solid rgba(39, 1, 1, 0.4);
+  border-top: 1px solid rgba(49, 1, 1, 0.4);
+
+}
+.sizef{
+  width: 400px;
+  height: 40px;
+  margin-left: 10px;
+
+}
+*{
+  font-family: 'Libre Baskerville', serif;
+}
+.form-group{
+  position: relative;
+  padding-top: 0px;
+  margin-top: 10px;
+}
+label {
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  transform: translateY(5px);
+  color: #aaa;
+  font-weight:  300;
+  font-size: 13px;
+  letter-spacing: -0.00933333em;
+  transition: .2s ease-in-out;
+}
+input:placeholder-shown + label{
+  opacity: 0;
+  transform: translateY(15px);
+}
+button{
+  background: linear-gradient(120deg, #361f04, #b88827);
+}
+input{
+  font-family: inherit;
+  border: 0;
+  border-bottom: 1px solid #4a2701;
+  font-size: 12px;
+  color: #000;
+  background-color: rgba(232, 232, 232, 0.3);
+  border-radius: 5px;
+}
+
+
+
+// .setBackground{
+
+//   background-image:url(https://scontent.fkkc4-2.fna.fbcdn.net/v/t1.15752-9/336581019_736105724829357_2485597675399392452_n.png?_nc_cat=102&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeFlMhlFhGnr_PIEOnNjkG_8e5l5L_FFsq17mXkv8UWyrXLhl0mGl9oseA41ka-pwwxwht1rfsgMl8cIaNZ_4SaF&_nc_ohc=JZUBHBA0PJYAX9LbWPw&_nc_ht=scontent.fkkc4-2.fna&oh=03_AdTcaVgR4Mt23mmPXiiccmDRuHPbSqETlln2p1X7gaMXdQ&oe=6443DA2A);
+//   background-size: cover;
+//   height: 770px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+// @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Libre+Baskerville&family=Prompt:wght@100&display=swap');
+// *{
+//   margin: 0px;
+//   padding: 0px;
+//   box-sizing: border-box;
+//   font-family: 'Libre Baskerville', serif;
+// }
+
+// .form{
+//   width: 40rem;
+//   height: 30rem;
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   background-color: rgba(33, 28, 28, 0.3);
+//   box-shadow: 0 8px 32px 0 rgba(249, 249, 251, 0.37);
+//   border-radius: 30px;
+//   border-left: 1px solid rgba(255,255,255,.4);
+//   border-top: 1px solid rgba(255,255,255,.4);
+// }
+
+// h1{
+//   font-size: 50px;
+//   text-align: center;
+//   color: azure;
+//   text-shadow: 2px,2px,4px rgba(0,0,0,.2);
+//   letter-spacing: 3px;
+//   margin-top: 5%;
+//   opacity: .7;
+
+// }
+// label{
+//   font-size: 20px;
+//   color: azure;
+//   margin-left: -300px;
+//   opacity: .8;
+//   text-shadow: 2px 2px 4px rgb(0,0,0,.2);
+// }
+// input{
+//   width: 400px;
+//   margin: 5%;
+//   margin-left: 40px;
+//   margin-bottom: 8%;
+//   border: none;
+//   outline: none;
+//   background: transparent;
+//   color: azure;
+//   border-bottom: 1px solid rgba(255,255,255,0.6);
+//   opacity: 08;
+// }
+// button{
+//   width: 35%;
+//   //margin-top: -10px;
+//   // margin: 0% auto;
+//   color: azure;
+//   font-size: 15px;
+//   opacity: .7;
+//   background: rgba(255,255,255,0.06);
+//   padding: 10px 30px;
+//   border: none;
+//   outline: none;
+//   border-radius: 20px;
+//   text-shadow: 2px 2px 4px rgba(255,255,255,0.2);
+//   box-shadow: 3px 3px 5px rgba(244, 245, 251, 0.37);
+//   border-left: 1px solidrgba(255,255,255,.3);
+//   border-top: 1px solidrgba(255,255,255,.3);
+// }
+// a{
+//   font-size: 12px;
+//   text-align: center;
+//   color: azure;
+// }

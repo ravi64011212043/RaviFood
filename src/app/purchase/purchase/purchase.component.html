@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="details">
+        <div class="recentOrders">
+            <div class="cardHeader">
+                <h2>สถานะการสั่งซื้อของฉัน</h2>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                     สถานะ
+                  </button>
+                  <ul class="dropdown-menu">
+                    <ng-container *ngFor="let status of statuss; let i = index;">
+                        <li>
+                          <a class="dropdown-item" (click)="loadStatus(status.STID)" style="font-weight: bolder;">{{status.name}}</a>
+                        </li>
+                    </ng-container>
+                        <li>
+                          <a class="dropdown-item" (click)="loadStatus()" style="font-weight: bolder;">ทั้งหมด</a>
+                        </li>
+                  </ul>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>หมายเลขออเดอร์</td>
+                        <td>จำนวนรายการอาหารทั้งหมด</td>
+                        <td>ราคาทั้งหมด</td>
+                        <td>สถานะการจัดส่ง</td>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let order_customer of orders_customer">
+                    <tr (click)="modal(order_customer)">
+                        <td>{{order_customer.OID}}</td>
+                        <td>x{{order_customer.amount}}</td>
+                        <td>{{getTotalPriceFormatted(order_customer.total_price)}}</td>
+                        <td>
+                           <span class="status" [class.delivered]="order_customer.name === 'ยังไม่จัดส่ง'" [class.inprogress]="order_customer.name === 'กำลังจัดส่ง'" [class.finish]="order_customer.name === 'จัดส่งแล้ว'">{{order_customer.name}}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

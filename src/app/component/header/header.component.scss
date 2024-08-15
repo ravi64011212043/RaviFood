@@ -1,0 +1,159 @@
+#logo a {
+  background: url(../../../images/logo/logo.png) no-repeat;
+  background-size: 100%;
+  display: block;
+  height: 48px;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 300px;
+}
+
+nav#main-navigation{
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#main-navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+#main-navigation li {
+margin: 0 10px;
+}
+
+#main-navigation a {
+display: block;
+padding: 10px;
+text-decoration: none;
+color: black;
+font-size: 18px;
+font-weight: 600;
+}
+
+nav#main-navigation{
+  margin-bottom: 12px;
+   /* clear: both; */
+}
+
+nav#main-navigation ul li a.text-active{
+  color: red;
+  z-index: 2;
+ }
+
+.text-active {
+  color: red;
+  z-index: 2;
+}
+
+#main-navigation a:hover{
+  color: red;
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.show {
+  display: block;
+}
+
+.dropdown-item{
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+  #main-navigation ul {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  #main-navigation li {
+      margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #main-navigation ul {
+    display: none;
+    flex-direction: column;
+    margin-top: 40px; /* เพิ่ม margin เพื่อไม่ให้เมนู overlay กับ header */
+  }
+
+  #main-navigation.show-nav ul {
+    display: flex;
+    background-color: #fff;
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+
+  }
+
+  #main-navigation li {
+    margin: 10px 0;
+  }
+
+  #main-navigation a {
+    font-size: 16px;
+    color: #000;
+  }
+
+  .navbar-toggler {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+  }
+}
+
+.navbar-toggler {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .navbar-toggler {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+  }
+
+  .navbar-toggler span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #837d7d;
+    margin-bottom: 5px;
+  }
+}
+
+a{
+  cursor: pointer;
+}
+
+.account{
+  margin-top: 4px;
+  font-size: 40px;
+  width: 37px;
+  height: 37px;
+  cursor: pointer;
+}
+
+.cart-shopping{
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 28px;
+  width: 37px;
+  height: 37px;
+  cursor: pointer;
+}

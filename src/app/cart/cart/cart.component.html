@@ -1,0 +1,80 @@
+<ng-container *ngIf="carts.length > 0">
+  <div class="container">
+    <div class="details">
+      <div class="recentOrders">
+          <div class="cardHeader">
+              <h2>ตะกร้าสินค้าของฉัน</h2>
+          </div>
+          <table>
+              <thead>
+                  <tr>
+                      <td>ลำดับ</td>
+                      <td>สินค้า</td>
+                      <td>ราคา</td>
+                      <td>จำนวน</td>
+                      <td>รวมทั้งหมด</td>
+                      <td>จัดการ</td>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let cart of carts; let i = index;">
+                    <td>
+                      {{i+1}}
+                    </td>
+                    <td>
+                      <div style="display: flex;">
+                        <img src="{{cart.picture}}" style="width: 100px; border-radius: 20px;">
+                        <div style="margin-left: 30px; ">
+                            <p>{{cart.name}}</p>
+                            <p>{{cart.detail}}</p>
+                        </div>
+                      </div>
+                    </td>
+                      <td>฿{{cart.price}}.00</td>
+                      <td>
+                        <div class="quantity">
+                          <button (click)="dec(cart.CartID,i)">
+                            -
+                          </button>
+                          <span>{{cart.amount}}</span>
+                          <button (click)="inc(cart.CartID,i)">
+                            +
+                          </button>
+                        </div>
+                      </td>
+                      <td>{{getTotalPriceFormattedID(cart.price,cart.amount)}}</td>
+                      <td>
+                        <!-- <span class="material-icons-round" style="color: rgb(209, 128, 61); transform: rotate(0deg); font-size: 116px; -webkit-text-stroke: 4.1px rgb(13, 13, 12);">delete</span> -->
+                        <button class="btn btn-danger" (click)="removeFoodInCart(cart.CartID)">delete</button>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td colspan="11" style="text-align: right;"><h4>ยอดสั่งซื้อทั้งหมด &nbsp;&nbsp;&nbsp;&nbsp;{{getTotalPriceFormatted()}}</h4></td>
+                  </tr>
+                    <tr>
+                      <td colspan="12" style="text-align: right;">
+                        <button class="btn btn-danger" (click)="deleteAllCart()">ลบสินค้าทั้งหมด</button>
+                        <button class="btn btn-primary" routerLink="/menu">เลือกเมนูเพิ่มเติม</button>
+                        <button class="btn btn-primary" (click)="submitOrder()">ดำเนินการสั่งซื้อและชำระเงิน</button>
+                      </td>
+                    </tr>
+              </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="carts.length <= 0">
+<div class="container">
+  <div class="card">
+    <h5 class="card-title">My Cart</h5>
+  </div>
+  <div class="center">
+      <img src="https://www.pngitem.com/pimgs/m/480-4803503_your-cart-is-currently-empty-empty-cart-icon.png" alt="">
+      <h4>ตะกร้าสินค้าของคุณว่างเปล่า</h4>
+      <h6>กรุณาเพิ่มรายการอาหาร !!</h6>
+      <button class="btn btn-primary" routerLink="/menu">กลับไปหน้าเมนู</button>
+  </div>
+</div>
+</ng-container>

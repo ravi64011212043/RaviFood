@@ -1,0 +1,40 @@
+<!-- <div class="setBackground">
+  <div class="auth-form-body-mt-3" style="display: flex; ">
+    <div class="form">
+      <h1 style="margin-top: 50px; color:azure;">Login</h1>
+        <label  style="margin-top: 50px;" for="">Username</label>
+        <input type="text" #username placeholder="ชื่อผู้ใช้">
+        <label for="">Password</label>
+        <input type="password" #password placeholder="รหัสผ่าน">
+        <button type="submit" (click)="onClick(username.value, password.value)">Login</button>
+    </div>
+  </div>
+</div> -->
+<div class="body">
+   <div class="test" style="background-color: rgba(255, 255, 255, 0.8);  width: 1000px; height: 400px; ">
+      <div >
+          <img style="width: 400px; height: 400px;" src="https://health.campus-star.com/app/uploads/2018/08/cocoa-cover-2.jpg" alt="">
+      </div>
+      <div style="width: 500px; height: 400px; margin-left: 50px; margin-top: 50px;">
+          <div style="display: flex; flex-direction: column; ">
+              <div style="margin-top: 50px; color: rgb(55, 24, 1);"><h1 >LOGIN</h1></div>
+              <div style=" margin-top: 40px; display: flex; flex-direction: column; justify-content: center;  align-items: center;">
+                  <div class="form-group">
+                      <input class="sizef" type="text" id="username" placeholder="username" #username>
+                      <label for="username">username</label>
+                  </div>
+                  <div class="form-group" style="margin-top: 20px;">
+                      <input class="sizef" type="text" id="password" placeholder="password" #password>
+                      <label for="password">password</label>
+                  </div>
+              </div>
+              <div  style="display: flex; margin-top: 40px; justify-content: flex-end;">
+                <button class="btn btn-warning" style="color: aliceblue;" type="submit" style="margin-right: 40px;" routerLink="/register">Sign Up</button>
+                  <button class="btn btn-warning" style="color: aliceblue;" type="submit" (click)="onClick(username.value, password.value)">Login</button>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+

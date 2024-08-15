@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="details">
+      <div class="recentOrders">
+          <div class="cardHeader" style="margin-left: 480px;">
+            <div class="auth-content">
+              <h2 class="font-heading-2">ข้อมูลส่วนตัว</h2>
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="form-group-col">
+                    <label for="firstname">ชื่อจริง:</label>
+                    <input type="text" id="firstname" name="firstname" [value]="firstname" required disabled>
+                  </div>
+                  <div class="form-group-col">
+                    <label for="lastname">นามสกุล:</label>
+                    <input type="text" id="lastname" name="lastname" [value]="lastname" required disabled>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group-col">
+                    <label for="address">ที่อยู่:</label>
+                    <input type="text" id="address" name="address" [value]="address" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group-col">
+                    <label for="phone">เบอร์โทรศัพท์:</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" [value]="phone" required>
+                    <small>กรุณากรอกเบอร์โทรศัพท์ 10 หลัก</small>
+                  </div>
+                </div>
+                <button type="submit" (click)="onSubmit()">แก้ไขข้อมูล</button>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>

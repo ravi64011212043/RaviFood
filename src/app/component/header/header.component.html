@@ -1,0 +1,60 @@
+<header role="banner">
+  <p id="logo">
+      <a routerLink="/home"></a>
+  </p>
+  <nav id="main-navigation">
+      <ul>
+          <li>
+              <a routerLink="/home" [class.text-active]="isActiveHome">หน้าแรก</a>
+          </li>
+          <li>
+              <a routerLink="/about" [class.text-active]="isActiveAbout">เกี่ยวกับเรา</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false" (click)="toggleMenuDropdown()" [class.text-active]="isActiveMenu">
+              เมนู
+            </a>
+            <ng-container *ngIf="isMenuDropdownOpen">
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li *ngFor="let type of types; let i = index" (click)="closeDropdown()">
+                  <a class="dropdown-item" [routerLink]="['/' + name[i]]">{{type.name}}</a>
+                </li>
+              </ul>
+            </ng-container>
+          </li>
+          <ng-container *ngIf="isLoggedIn">
+              <li>
+                <button routerLink="/cart" style="border: none; background: #fff;">
+                  <i style="font-size: 30px;" class="material-icons cart-shopping">shopping_cart</i>
+                  <!-- <mat-icon class="material-icons cart-shopping">shopping_cart</mat-icon> -->
+                  <div style="font-size: 10px;" class="badge bg-danger">{{carts.length}}</div>
+                </button>
+              </li>
+              <li class="nav-item dropdown" (click)="toggleAccountDropdown()">
+                <mat-icon class="account">account_circle</mat-icon>
+                <ng-container *ngIf="isAccountDropdownOpen">
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li>
+                      <a class="dropdown-item" routerLink="/profile">ข้อมูลส่วนตัว</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" routerLink="/purchase">สถานะการสั่งซื้อ</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" (click)="logout()">ออกจากระบบ</a>
+                    </li>
+                  </ul>
+                </ng-container>
+              </li>
+          </ng-container>
+          <ng-container *ngIf="!isLoggedIn">
+            <a routerLink="/login" >เข้าสู่ระบบ</a>
+          </ng-container>
+      </ul>
+  </nav>
+    <button class="navbar-toggler" style="margin-top: 20px; position: relative; top: -8px;">
+      <span></span>
+      <span></span>
+      <span></span>
+  </button>
+</header>

@@ -1,0 +1,95 @@
+<div class="d-flex align-items-center">
+  <div class="btn-group dropend me-3" style="margin-left: 30px; margin-top: 30px;">
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+       จัดการสถานะ
+    </button>
+    <ul class="dropdown-menu">
+      <ng-container *ngFor="let status of statuss;">
+        <li>
+          <a class="dropdown-item" *ngIf="status.STID !== data.status_order" (click)="statusPut(status.STID)">{{status.name}}</a>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+  <p style="font-size: 24px; font-weight: bolder; margin-left: 250px;">หมายเลขออเดอร์</p>
+</div>
+<p style="font-size: 24px; font-weight: bolder; align-items: center; text-align: center;">#{{data.order.OID}}</p>
+<div style="display: flex; justify-content: space-between;">
+  <div style="flex: 1;"></div>
+  <div style="flex: 1; margin-left: 100px;">
+    <ul style="list-style: none; font-weight: bolder;">
+      <li>ชื่อลูกค้า : {{data.order.firstname}}&nbsp;{{data.order.lastname}}</li>
+      <li>ที่อยู่ : {{data.order.address}}</li>
+      <li>เบอร์โทร : 0{{data.order.phone}}</li>
+    </ul>
+  </div>
+</div>
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+  <table class="table table-bordered table-striped mb-0">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">รายการอาหาร</th>
+        <th scope="col">จำนวน</th>
+        <th scope="col">ราคา</th>
+        <th scope="col">ราคารวม</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let order_detail of order_details; let i = index;">
+      <tr>
+        <th scope="row">{{i+1}}</th>
+        <td>
+            <div style="margin-left: 10px; display: flex; align-items: center;">
+              <img src="{{order_detail.picture}}" style="width: 100px; border-radius: 20px; display: flex;">
+              <div style="margin-left: 10px; display: flex;">
+                  <p>{{order_detail.name}}</p>
+                  <p style="margin-left: 10px;">{{order_detail.detail}}</p>
+              </div>
+          </div>
+        </td>
+        <td>x{{order_detail.amount}}</td>
+        <td>{{order_detail.price}}</td>
+        <td>{{getTotalPriceFormatted(order_detail.amount, order_detail.price)}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <p style="margin-left: 800px;">ราคาทั้งหมด : {{totalPrice()}}</p>
+</div>
+<!-- <div class="container">
+  <div class="details">
+        <table>
+            <thead>
+                <tr>
+                    <td>    </td>
+                    <td>รายการอาหาร</td>
+                    <td>จำนวน</td>
+                    <td>ราคา</td>
+                    <td>ราคารวม</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order_detail of order_details; let i = index;">
+                  <td>{{i+1}}.</td>
+                  <td>
+                    <div style="margin-left: 10px; display: flex; align-items: center;">
+                      <img src="{{order_detail.picture}}" style="width: 100px; border-radius: 20px; display: flex;">
+                      <div style="margin-left: 10px; display: flex;">
+                          <p>{{order_detail.name}}</p>
+                          <p style="margin-left: 10px;">{{order_detail.detail}}</p>
+                      </div>
+                    </div>
+                  </td>
+                    <td>x{{order_detail.amount}}</td>
+                    <td>{{order_detail.price}}</td>
+                    <td>{{getTotalPriceFormatted(order_detail.amount, order_detail.price)}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+          <span>ราคาทั้งหมด : {{totalPrice()}}</span>
+        </div>
+  </div>
+</div> -->
+

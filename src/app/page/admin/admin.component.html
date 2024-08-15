@@ -1,0 +1,135 @@
+<div class="containerr">
+  <div class="navigation">
+      <ul>
+          <li>
+              <a routerLink="/admin">
+                  <!-- <span class="icon"><ion-icon name="logo-apple"></ion-icon></span> -->
+                  <span class="title">Rawi Food</span>
+              </a>
+          </li>
+          <li>
+              <a routerLink="/admin">
+                  <!-- <span class="icon"><ion-icon name="home-outline"></ion-icon></span> -->
+                  <span class="icon"></span>
+                  <span class="title">Dashboard</span>
+              </a>
+          </li>
+          <!-- <li>
+              <a href="">
+                  <span class="icon"></span>
+                  <span class="title">Customers</span>
+              </a>
+          </li> -->
+          <!-- <li>
+              <a href="">
+                  <span class="icon"></span>
+                  <span class="title">Message</span>
+              </a>
+          </li> -->
+          <!-- <li>
+              <a href="">
+                  <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                  <span class="icon"></span>
+                  <span class="title">Settings</span>
+              </a>
+          </li> -->
+          <li>
+              <a href="">
+                  <!-- <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span> -->
+                  <span class="icon"></span>
+                  <span class="title" (click)="logout()">Sign Out</span>
+              </a>
+          </li>
+      </ul>
+  </div>
+
+  <!-- main -->
+  <div class="main">
+      <div class="topbar">
+          <div class="toggle">
+              <!-- <ion-icon name="menu-outline"></ion-icon> -->
+          </div>
+          <!-- search -->
+          <!-- <div class="search">
+              <label>
+                  <input type="text" placeholder="Search here">
+                  <ion-icon name="search-outline"></ion-icon>
+              </label>
+          </div> -->
+          <!-- userImg -->
+          <!-- <div class="user">
+              <img src="" alt="">
+          </div> -->
+      </div>
+      <!-- cards -->
+      <div class="cardBox">
+          <div class="card" (click)="status(1)">
+              <div>
+                  <div class="numbers">{{this.status1}}</div>
+                  <div class="cardName">ยังไม่จัดส่ง</div>
+              </div>
+              <div class="iconBx">
+                  <!-- <ion-icon name="eye-outline"></ion-icon> -->
+              </div>
+          </div>
+          <div class="card" (click)="status(2)">
+              <div>
+                  <div class="numbers">{{this.status2}}</div>
+                  <div class="cardName">กำลังจัดส่ง</div>
+              </div>
+              <div class="iconBx">
+                  <!-- <ion-icon name="cart-outline"></ion-icon> -->
+              </div>
+          </div>
+          <div class="card" (click)="status(3)">
+              <div>
+                  <div class="numbers">{{this.status3}}</div>
+                  <div class="cardName">จัดส่งแล้ว</div>
+              </div>
+              <div class="iconBx">
+                  <!-- <ion-icon name="chatbubbles-outline"></ion-icon> -->
+              </div>
+          </div>
+          <div class="card">
+              <div>
+                  <div class="numbers">{{getTotalPriceFormatted()}}</div>
+                  <div class="cardName">ยอดรวมทั้งหมด</div>
+              </div>
+              <div class="iconBx">
+                  <!-- <ion-icon name="cash-outline"></ion-icon> -->
+              </div>
+          </div>
+      </div>
+      <!-- order details list -->
+      <div class="details">
+          <div class="recentOrders">
+              <div class="cardHeader">
+                  <h2>ออเดอร์ล่าสุด</h2>
+                  <a class="btn" (click)="status()">ดูออเดอร์ทั้งหมด</a>
+              </div>
+              <table>
+                  <thead>
+                      <tr>
+                          <td>หมายเลขออเดอร์</td>
+                          <td>ลูกค้า</td>
+                          <td>ที่อยู่</td>
+                          <td>เบอร์โทร</td>
+                          <td>สถานะ</td>
+                      </tr>
+                  </thead>
+                  <tbody *ngFor="let order of orders;">
+                      <tr (click)="modal(order)">
+                          <td>{{order.OID}}</td>
+                          <td>คุณ{{order.firstname}}&nbsp;{{order.lastname}}</td>
+                          <td>{{order.address}}</td>
+                          <td>0{{order.phone}}</td>
+                          <td>
+                              <span class="status" [class.delivered]="order.name === 'ยังไม่จัดส่ง'" [class.inprogress]="order.name === 'กำลังจัดส่ง'" [class.finish]="order.name === 'จัดส่งแล้ว'">{{order.name}}</span>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>

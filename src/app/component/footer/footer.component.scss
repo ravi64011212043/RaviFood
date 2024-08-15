@@ -1,0 +1,101 @@
+/* Footer Start Css */
+footer {
+  color: #707070;
+  text-align: center;
+  font-size: 18px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+/* footer ส่วนของเมนู Start */
+@media (max-width: 768px) {
+  footer nav .footer-menu ul {
+      border-bottom: 1px solid #070707;
+      border-top: 0;
+  }
+}
+
+footer nav ul {
+  width: fit-content;
+  min-height: 10px;
+  margin: auto;
+  overflow: hidden;
+  list-style-type: none;
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+footer nav .footer-menu {
+  text-align: center;
+}
+
+.footer-menu {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 451px) and (max-width: 768px){
+  footer nav .footer-menu li {
+      display: block;
+      float: left;
+      text-align: center;
+      width: 50%;
+      border-top: 1px solid #070707;
+      padding: 10px;
+      border-bottom: 1px solid #070707;
+      margin: 0 0 -1px;
+  }
+}
+
+footer a {
+  text-decoration: none;
+  color: #000;
+  background: transparent;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+footer a:hover {
+  color: #707070;
+}
+
+footer a.footer-active {
+  color: red;
+  z-index: 2;
+}
+
+/* footer ส่วนของเมนู End */
+
+/* footer ส่วนของ social start */
+footer nav .social-network {
+  width: 320px;
+}
+
+.social-network {
+  list-style-type: none;
+}
+
+footer nav .social-network li {
+  background-color: #ea1d24;
+  border-radius: 2rem;
+  border: 2px solid #fff;
+}
+
+footer nav li {
+  float: left;
+  margin: 0 0.5rem;
+}
+
+footer nav .social-network li img {
+  margin: 10px;
+  max-width: 40px;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+footer nav .social-network li:hover {
+  transform: scale(1.1);
+}
+
+/* footer ส่วนของ social end */

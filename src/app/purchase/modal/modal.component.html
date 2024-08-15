@@ -1,0 +1,45 @@
+<p style="font-size: 24px; font-weight: bolder; text-align: center; margin-top: 30px;">หมายเลขออเดอร์</p>
+<p style="font-size: 24px; font-weight: bolder; align-items: center; text-align: center;">#{{data.order_customer.OID}}</p>
+<div style="display: flex; justify-content: space-between;">
+  <div style="flex: 1;"></div>
+  <div style="flex: 1;">
+    <ul style="list-style: none; font-weight: bolder; margin-left: 150px;">
+      <li>ชื่อ : {{data.order_customer.firstname}}&nbsp;{{data.order_customer.lastname}}</li>
+      <li>ที่อยู่ : {{data.order_customer.address}}</li>
+      <li>เบอร์โทร : 0{{data.order_customer.phone}}</li>
+    </ul>
+  </div>
+</div>
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+  <table class="table table-bordered table-striped mb-0">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">รายการอาหาร</th>
+        <th scope="col">จำนวน</th>
+        <th scope="col">ราคา</th>
+        <th scope="col">ราคารวม</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let order_detail of order_details; let i = index;">
+      <tr>
+        <td scope="row">{{i+1}}</td>
+        <td>
+            <div style="margin-left: 10px; display: flex; align-items: center;">
+              <img src="{{order_detail.picture}}" style="width: 100px; border-radius: 20px; display: flex;">
+              <div style="margin-left: 10px; display: flex;">
+                  <p>{{order_detail.name}}</p>
+                  <p style="margin-left: 10px;">{{order_detail.detail}}</p>
+              </div>
+          </div>
+        </td>
+        <td>x{{order_detail.amount}}</td>
+        <td>{{order_detail.price}}</td>
+        <td>{{getTotalPriceFormatted(order_detail.amount, order_detail.price)}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <p style="margin-left: 750px; font-weight: bolder; font-size: 18px;">ราคาทั้งหมด : {{totalPrice()}}</p>
+</div>

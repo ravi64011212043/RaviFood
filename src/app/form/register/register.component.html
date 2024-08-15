@@ -1,0 +1,50 @@
+<div class="body">
+  <div  style="display: flex; flex-direction: row; background-color:#ffffff ; width: 1000px; height: 500px; border-radius: 5px;">
+    <div >
+        <img height="500px" width="400px" src="https://annabanana.co/wp-content/uploads/2019/03/Vegan-Banoffee-Pie-4.jpg" alt="">
+    </div>
+
+    <div  style="width: 500px; height: 500px; margin-left: 50px; margin-top: 75px;">
+        <div class="h2">Register</div>
+
+        <div style="display: flex; flex-direction: row;">
+            <div class="form-group" style="width: 450px; margin-top: 25px;" >
+                <input type="text" id="firstname" placeholder="firstname" #firstname>
+                <label for="firstname">Firstname</label>
+            </div>
+            <div class="form-group" style="padding-left: 10px; width: 450px; margin-top: 25px;">
+                <input type="text" id="lastname" placeholder="lastname" #lastname>
+                <label for="lastname">Lastname</label>
+            </div>
+        </div>
+
+        <div>
+            <div class="form-group" style="margin-top: 25px;">
+                <input type="text" id="phone" placeholder="phone" #phone>
+                <label for="phone">Phone Number</label>
+            </div>
+            <div class="form-group" style="margin-top: 25px;">
+                <input type="text" id="address" placeholder="address" #address>
+                <label for="address">address</label>
+            </div>
+        </div>
+
+        <div style="display: flex; flex-direction: row;">
+            <div class="form-group" style="width: 450px; margin-top: 25px;">
+                <input type="text" id="username" placeholder="username" #username>
+                <label for="username">username</label>
+            </div>
+            <div class="form-group" style="margin-top: 25px; padding-left: 10px; width: 450px;">
+                <input type="text" id="password" placeholder="password" #password>
+                <label for="password">password</label>
+            </div>
+        </div>
+        <div style="margin-top: 50px;">
+            <div class="button-area">
+                <button class="btn btn-warning" style=" margin-left:270px; color: #fff;" routerLink="/login">Login</button>
+                <button class="btn btn-warning" style=" margin-left:35px; color: #fff;" (click)="onSubmit(firstname.value, lastname.value, address.value, phone.value, username.value, password.value)">Sign Up</button>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
